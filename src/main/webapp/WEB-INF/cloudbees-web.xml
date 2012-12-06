@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<cloudbees-web-app xmlns="http://www.cloudbees.com/xml/webapp/1">     
+    <appid>TVMAnonymous</appid>
+    <context-param>
+        <param-name>awsAccessKey</param-name>
+        <param-value>${AWS_ACCESS_KEY_ID}</param-value>
+    </context-param>
+        <context-param>
+        <param-name>awsSecretKey</param-name>
+        <param-value>${AWS_SECRET_KEY}</param-value>
+    </context-param>
+</cloudbees-web-app>
