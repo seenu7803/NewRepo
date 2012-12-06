@@ -37,8 +37,10 @@
 
 <%
     if (ec2 == null) {
-        AWSCredentials credentials = new PropertiesCredentials(
-            getClass().getClassLoader().getResourceAsStream("AwsCredentials.properties"));
+        //AWSCredentials credentials = new PropertiesCredentials(
+        //    getClass().getClassLoader().getResourceAsStream("AwsCredentials.properties"));
+        AWSCredentials credentials = new BasicAWSCredentials (
+        		System.getProperty("AWS_ACCESS_KEY_ID"), System.getProperty("AWS_SECRET_KEY"));
         ec2 = new AmazonEC2Client(credentials);
         s3  = new AmazonS3Client(credentials);
         sdb = new AmazonSimpleDBClient(credentials);
