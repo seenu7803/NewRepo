@@ -37,9 +37,11 @@
 
 <%
     if (ec2 == null) {
-        AWSCredentials credentials = new BasicAWSCredentials (
-        	getServletContext().getInitParameter("awsAccessKey"), 
-        	getServletContext().getInitParameter("awsSecretKey"));
+    	AWSCredentials credentials = new BasicAWSCredentials (
+    		     System.getProperty("AWS_ACCESS_KEY_ID"), System.getProperty("AWS_SECRET_KEY"));
+        //AWSCredentials credentials = new BasicAWSCredentials (
+        //	getServletContext().getInitParameter("awsAccessKey"), 
+        //	getServletContext().getInitParameter("awsSecretKey"));
      
         ec2 = new AmazonEC2Client(credentials);
         s3  = new AmazonS3Client(credentials);
