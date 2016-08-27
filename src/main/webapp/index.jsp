@@ -63,47 +63,32 @@
         <div class="section grid grid15 s3">
             <h2>Amazon S3 Buckets:</h2>
             <ul>
-            <% for (Bucket bucket : s3.listBuckets()) { %>
-               <li> <%= bucket.getName() %> </li>
-            <% } %>
+            
+            
             </ul>
         </div>
 
         <div class="section grid grid15 sdb">
             <h2>Amazon SimpleDB Domains:</h2>
             <ul>
-            <% for (String domainName : sdb.listDomains().getDomainNames()) { %>
-               <li> <%= domainName %></li>
-            <% } %>
             </ul>
         </div>
 
         <div class="section grid grid15 sqs">
             <h2>Amazon SQS Queues:</h2>
             <ul>
-            <% for (String queueUrl : sqs.listQueues().getQueueUrls() ) { %>
-               <li> <%= queueUrl %></li>
-            <% } %>
             </ul>
         </div>
 
         <div class="section grid grid15 sns">
             <h2>Amazon SNS Topics:</h2>
             <ul>
-            <% for (Topic topic : sns.listTopics().getTopics() ) { %>
-               <li> <%= topic.toString() %></li>
-            <% } %>
             </ul>
         </div> 
         
         <div class="section grid grid15 gridlast ec2">
             <h2>Amazon EC2 Instances:</h2>
             <ul>
-            <% for (Reservation reservation : ec2.describeInstances().getReservations()) { %>
-                <% for (Instance instance : reservation.getInstances()) { %>
-                   <li> <%= instance.getInstanceId() %></li>
-                <% } %>
-            <% } %>
             </ul>
         </div>
     </div>
