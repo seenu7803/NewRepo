@@ -17,7 +17,8 @@ public class TestSelenium {
 			Assert.assertTrue(title.contains("Hello AWS")); 		
 		}	
 		@BeforeTest
-		public void beforeTest() {	
+		public void beforeTest() {
+		    System.setProperty("webdriver.firefox.bin", "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");
 		    driver = new FirefoxDriver();  
 		}		
 		@AfterTest
