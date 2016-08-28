@@ -1,3 +1,4 @@
+package com.cloudbees.aws.cb-aws-webapp;
 import junit.framework.TestCase;
 import org.junit.Assert;
 public class Testing extends TestCase {
