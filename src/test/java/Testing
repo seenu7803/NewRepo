@@ -1,10 +1,8 @@
+import junit.framework.TestCase;
 import org.junit.Assert;
+public class Testing extends TestCase {
 
-import org.junit.Test;
-public class UnitTest
-{
-
-  @Test public void Test()
+@Test public void Test()
   {
      Assert.assertEquals(5, 2+3);
   }
