@@ -1,4 +1,4 @@
-package com.cloudbees.aws.demo;
+package unittesting.demo;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
