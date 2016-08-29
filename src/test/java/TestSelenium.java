@@ -29,7 +29,7 @@ public class TestSelenium {
 			try{
 			driver.get("http://54.197.163.83:80/demo/");  
 						
-			logger.log(LogStatus.INFO, "Snapshot below: " + logger.addScreenCapture(GetScreenShot("D:\\screenshot1.jpg")));
+			logger.log(LogStatus.INFO, "Snapshot below: " + logger.addScreenCapture(GetScreenShot("ScreenShot1.jpg")));
 			
 			 String title = driver.getTitle();
 			 logger.log(LogStatus.PASS, "Check for Title");
@@ -46,7 +46,7 @@ public class TestSelenium {
 		@BeforeTest
 		public void beforeTest() {
 		    //System.setProperty("webdriver.firefox.bin", "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");
-			extent = new ExtentReports("D:\\Java\\JavaSeleniumReport.html", true);
+			extent = new ExtentReports("JavaSeleniumReport.html", true);
 			logger=extent.startTest("Verify App Title");
 			
 			System.out.println("Sarted");
