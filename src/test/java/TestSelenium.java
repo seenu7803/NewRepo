@@ -17,11 +17,17 @@ public class TestSelenium {
 	    private WebDriver driver;		
 		@Test				
 		public void testEasy() {	
+			try{
 			driver.get("http://54.197.163.83:80/demo/");  
 			getscreenshot();
 			String title = driver.getTitle();			
 			System.out.println("Check for Title");
-			Assert.assertTrue(title.contains("Hello AWS")); 		
+			Assert.assertTrue(title.contains("Hello AWS"));
+			}
+			catch(Exception ex)
+			{ 
+				System.out.println(ex);
+			}
 		}	
 		@BeforeTest
 		public void beforeTest() {
