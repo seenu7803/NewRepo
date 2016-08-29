@@ -19,10 +19,12 @@ public class TestSelenium {
 		@BeforeTest
 		public void beforeTest() {
 		    //System.setProperty("webdriver.firefox.bin", "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");
+			System.out.println("Sarted");
 		    driver = new FirefoxDriver();  
 		}		
 		@AfterTest
 		public void afterTest() {
-			driver.quit();			
+			driver.quit();		
+			System.out.println("Stoped");
 		}		
 }	
