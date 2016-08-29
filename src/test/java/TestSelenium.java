@@ -6,14 +6,20 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;		
 import org.testng.annotations.Test;	
 import org.testng.annotations.BeforeTest;	
-import org.testng.annotations.AfterTest;	
+import org.testng.annotations.AfterTest;
+
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import java.io.File;
+import org.apache.commons.io.FileUtils;
 
 public class TestSelenium {		
 	    private WebDriver driver;		
 		@Test				
 		public void testEasy() {	
 			driver.get("http://54.197.163.83:80/demo/");  
-			String title = driver.getTitle();	
+			getscreenshot();
+			String title = driver.getTitle();			
 			System.out.println("Check for Title");
 			Assert.assertTrue(title.contains("Hello AWS")); 		
 		}	
@@ -27,5 +33,13 @@ public class TestSelenium {
 		public void afterTest() {
 			driver.quit();		
 			System.out.println("Stoped");
-		}		
+		}
+		
+		
+		public void getscreenshot() throws Exception 
+	      {
+	              File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	           //The below method will save the screen shot in d drive with name "screenshot.png"
+	              FileUtils.copyFile(scrFile, new File("D:\\screenshot1.jpg"));
+	      }
 }	
