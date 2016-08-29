@@ -32,7 +32,7 @@ public class TestSelenium {
 			logger.log(LogStatus.INFO, "Snapshot below: " + logger.addScreenCapture(GetScreenShot("ScreenShot1.jpg")));
 			
 			 String title = driver.getTitle();
-			 logger.log(LogStatus.PASS, "Check for Title");
+			 logger.log(LogStatus.INFO, "Check for Title");
 			 Assert.assertTrue(title.contains("Hello AWS"));
 			 logger.log(LogStatus.PASS, "Title verified");
 			 
