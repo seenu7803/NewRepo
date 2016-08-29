@@ -13,16 +13,15 @@ public class TestSelenium {
 		@Test				
 		public void testEasy() {	
 			driver.get("http://54.197.163.83:80/demo/");  
-			String title = driver.getTitle();				 
+			String title = driver.getTitle();	
+			System.out.println("Check for Title");
 			Assert.assertTrue(title.contains("Hello AWS")); 		
 		}	
 		@BeforeTest
 		public void beforeTest() {
 		    //System.setProperty("webdriver.firefox.bin", "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");
 			System.out.println("Sarted");
-		    driver = new FirefoxDriver();  
-		    String title = driver.getTitle();				 
-			Assert.assertTrue(title.contains("Hello")); 		
+		    driver = new FirefoxDriver();		    		
 		}		
 		@AfterTest
 		public void afterTest() {
