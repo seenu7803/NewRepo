@@ -21,6 +21,8 @@ public class TestSelenium {
 		    //System.setProperty("webdriver.firefox.bin", "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");
 			System.out.println("Sarted");
 		    driver = new FirefoxDriver();  
+		    String title = driver.getTitle();				 
+			Assert.assertTrue(title.contains("Hello")); 		
 		}		
 		@AfterTest
 		public void afterTest() {
