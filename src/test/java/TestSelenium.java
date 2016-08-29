@@ -63,7 +63,7 @@ public class TestSelenium {
 		}
 		
 		
-		public string  GetScreenShot(string imgPath) throws Exception 
+		public String  GetScreenShot(String imgPath) throws Exception 
 	      {
 	              File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 	           //The below method will save the screen shot in d drive with name "screenshot.png"
