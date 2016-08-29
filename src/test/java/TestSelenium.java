@@ -29,7 +29,7 @@ public class TestSelenium {
 			try{
 			driver.get("http://54.197.163.83:80/demo/");  
 						
-			logger.log(LogStatus.INFO, "Snapshot below: " + test.addScreenCapture(GetScreenShot("D:\\screenshot1.jpg")));
+			logger.log(LogStatus.INFO, "Snapshot below: " + logger.addScreenCapture(GetScreenShot("D:\\screenshot1.jpg")));
 			
 			 String title = driver.getTitle();
 			 logger.log(LogStatus.PASS, "Check for Title");
