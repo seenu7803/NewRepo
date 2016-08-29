@@ -13,31 +13,50 @@ import org.openqa.selenium.TakesScreenshot;
 import java.io.File;
 import org.apache.commons.io.FileUtils;
 
+
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
+
+
 public class TestSelenium {		
-	    private WebDriver driver;		
+	    private WebDriver driver;	
+	    private ExtentReports extent;
+	    ExtentTest logger;
+	    
 		@Test				
 		public void testEasy() {	
 			try{
 			driver.get("http://54.197.163.83:80/demo/");  
 			getscreenshot();
-			 String title = driver.getTitle();			
-			 System.out.println("Check for Title");
+			 String title = driver.getTitle();
+			 logger.log(LogStatus.PASS, "Check for Title");
 			 Assert.assertTrue(title.contains("Hello AWS"));
+			 logger.log(LogStatus.PASS, "Title verified");
+			 
 			}
 			catch(Exception ex)
 			{ 
 				System.out.println(ex);
+				logger.log(LogStatus.Fail, "Testcase Failed");
 			}
 		}	
 		@BeforeTest
 		public void beforeTest() {
 		    //System.setProperty("webdriver.firefox.bin", "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");
+			extent = new ExtentReports("D:\\Java\\JavaSeleniumReport.html", true);
+			logger=extent.startTest("Verify App Title");
+			
 			System.out.println("Sarted");
-		    driver = new FirefoxDriver();		    		
+		    driver = new FirefoxDriver();
+		    driver.manage().window().maximize();
+		    logger.log(LogStatus.INFO, "Browser started ");
 		}		
 		@AfterTest
 		public void afterTest() {
-			driver.quit();		
+			driver.quit();
+			extent.endTest(logger);
+			extent.flush();
 			System.out.println("Stoped");
 		}
 		
